@@ -1,5 +1,5 @@
 import "./App.css";
-import ApplicantContactInfo from "./features/applications/applicant-contact-info.jsx";
+import Scholarship from "./pages/applications/scholarship.jsx";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
             </div>
           </aside>
           <main role="main" className="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
-            <ApplicantContactInfo />
+            <Scholarship />
           </main>
         </div>
       </div>

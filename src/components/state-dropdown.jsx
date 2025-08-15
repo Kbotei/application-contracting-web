@@ -1,23 +1,31 @@
-function StateDropDown({selectedValue, onChange}) {
+import { useState } from "react";
+
+function StateDropDown({ isRequired }) {
     const states = [
         { value: "AK", text: "Alaska" },
         { value: "AL", text: "Alabama" },
         { value: "NY", text: "New York" },
         { value: "TN", text: "Tennessee" },
-    ]
+    ];
+
+    const [selectedState, setSelectedState] = useState("");
 
     return (
         <>
-        <select value={selectedValue} onChange={e => onChange(e.target.value)} className="select select-lg">
-            <option value="">State</option>
+            <select
+                value={selectedState}
+                onChange={(e) => setSelectedState(e.target.value)}
+                className="select select-lg"
+                required={isRequired}
+            >
+                <option value="">State</option>
 
-            {states.map(state => (
-                <option value={state.value}>{state.text}</option>
-            ))}
-        </select>
+                {states.map((state) => (
+                    <option value={state.value}>{state.text}</option>
+                ))}
+            </select>
         </>
-    )
-
+    );
 }
 
-export default StateDropDown
+export default StateDropDown;
